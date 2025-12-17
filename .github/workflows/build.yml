@@ -1,0 +1,34 @@
+name: Build SteamRouteTool
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v2
+
+    - name: Restore NuGet packages
+      run: nuget restore SteamRouteTool.sln
+
+    - name: Setup MSBuild (x86)
+      uses: microsoft/setup-msbuild@v2
+      with:
+        msbuild-architecture: x86
+
+    - name: Build (Release)
+      run: msbuild SteamRouteTool.sln /p:Configuration=Release /p:Platform="Any CPU"
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: SteamRouteTool
+        path: SteamRouteTool/bin/Release/**
