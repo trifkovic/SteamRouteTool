@@ -1,21 +1,26 @@
-[STAThread]
-static void Main()
+using System;
+using System.IO;
+using System.Windows.Forms;
+
+namespace SteamRouteTool
 {
-    // AllocConsole(); // REMOVE THIS
-    // Console.WriteLine("SteamRouteTool starting..."); // REMOVE THIS
-
-    Application.EnableVisualStyles();
-    Application.SetCompatibleTextRenderingDefault(false);
-
-    try
+    static class Program
     {
-        Application.Run(new Main());
-    }
-    catch (Exception ex)
-    {
-        File.WriteAllText("SteamRouteTool_Error.txt", ex.ToString());
-        // Console.WriteLine("Exception written to SteamRouteTool_Error.txt"); // REMOVE THIS
-    }
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
 
-    // Console.ReadLine(); // REMOVE THIS
+            try
+            {
+                Application.Run(new Main());
+            }
+            catch (Exception ex)
+            {
+                // Still log errors to a file
+                File.WriteAllText("SteamRouteTool_Error.txt", ex.ToString());
+            }
+        }
+    }
 }
