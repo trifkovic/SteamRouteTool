@@ -408,7 +408,7 @@ namespace SteamRouteTool
 
         private void Btn_About_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Version: " + ProductVersion + Environment.NewLine + "Steam Route Tool is created by Froody.", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Version: " + ProductVersion + Environment.NewLine + "prokleta je peruca i brana mnogo nam je nanijela rana", "Kosovo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
