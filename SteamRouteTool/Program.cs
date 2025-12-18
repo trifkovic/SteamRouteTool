@@ -12,7 +12,6 @@ namespace SteamRouteTool
         [STAThread]
         static void Main()
         {
-            // Allocate a console to see errors/output
             AllocConsole();
             Console.WriteLine("SteamRouteTool starting...");
 
@@ -26,8 +25,11 @@ namespace SteamRouteTool
             catch (Exception ex)
             {
                 Console.WriteLine("Exception: " + ex);
+            }
+            finally
+            {
                 Console.WriteLine("Press Enter to exit...");
-                Console.ReadLine();
+                Console.ReadLine();  // <-- keep console open
             }
         }
     }
