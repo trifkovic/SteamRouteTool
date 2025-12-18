@@ -141,7 +141,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Text = "Steam Route Tool";
+            this.Text = "Ipce Ahmedovski";
             ((System.ComponentModel.ISupportInitialize)(this.routeDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
