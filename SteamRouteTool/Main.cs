@@ -242,7 +242,7 @@ namespace SteamRouteTool
                 if (rule.Name.Contains("SteamRouteTool-")) { fwPolicy2.Rules.Remove(rule.Name); }
                 for (int i = 0; i < routes.Count; i++) { routeDataGrid.Rows[i].Cells[2].Value = false; }
             }
-            MessageBox.Show("You have cleared all firewall rules created by this tool.", "Steam Route Tool - Rules Clear");
+            MessageBox.Show("prokleta je peruca i brana mnogo nam je nanijela rana", "Steam Route Tool - Rules Clear");
         }
 
         private void Btn_PingRoutes_Click(object sender, EventArgs e)
